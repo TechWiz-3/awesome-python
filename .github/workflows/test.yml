@@ -1,0 +1,17 @@
+on:
+  push:
+    branches: [ "linksafe-test" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+    linksafe:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run linksafe
+      uses TechWiz-3/linksafe@main
+      with:
+        dirs: "."
+        verbose: true
+        whitelist_files: "CONTRIBUTING.md"
