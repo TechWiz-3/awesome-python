@@ -1,7 +1,5 @@
 name: Linkcheck
-on:
-  push:
-    branches: [ "linksafe-test" ]
+on: [push]
 
 jobs:
   build:
@@ -12,3 +10,4 @@ jobs:
         uses: TechWiz-3/linksafe@main
         with:
           whitelist_files: "CONTRIBUTING.md"
+          whitelist_links: "https://www.lfd.uci.edu/~gohlke/pythonlibs/,http://www.rdkit.org/,https://www.docker.com/,https://www.linkedin.com/in/vinta"
