@@ -1,8 +1,7 @@
+name: Linkcheck
 on:
   push:
     branches: [ "linksafe-test" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -12,5 +11,4 @@ jobs:
       - name: Run the action
         uses: TechWiz-3/linksafe@main
         with:
-          verbose: true
           whitelist_files: "CONTRIBUTING.md"
